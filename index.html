@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cardapio online da Teagar Cozinha: comida brasileira precisa, feita no tempo certo.">
+  <meta name="theme-color" content="#201f1d">
+  <title>Teagar Cozinha | Cardapio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#cardapio">Ir para o cardapio</a>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Teagar Cozinha, inicio">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
+      <span>TEAGAR<small>COZINHA</small></span>
+    </a>
+    <div class="service-status">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span><b>COZINHA ABERTA</b><small>Pedidos ate 22:30</small></span>
+    </div>
+    <nav class="main-nav" aria-label="Navegacao principal">
+      <a href="#cardapio">Cardapio</a>
+      <a href="#processo">Processo</a>
+      <button class="order-trigger" id="openCart" type="button" aria-controls="cart" aria-expanded="false">
+        Pedido <span id="cartCount">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero grid-dark" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow on-dark">Cardapio / Rev. 01</p>
+        <h1 id="hero-title">COMIDA<br>SEM <em>ATALHO.</em></h1>
+        <p class="hero-lede">Ingredientes brasileiros, tecnica precisa e fogo no tempo certo. Voce escolhe o prato. A cozinha cuida do resto.</p>
+        <a class="primary-action" href="#cardapio">Ver pratos <span aria-hidden="true">↓</span></a>
+      </div>
+      <figure class="hero-visual">
+        <div class="plate-art has-image" id="heroImage" role="img" aria-label="Cupim assado com pure de mandioca e cebola tostada">
+          <span class="plate"></span>
+          <span class="food food-a"></span>
+          <span class="food food-b"></span>
+          <span class="food food-c"></span>
+        </div>
+        <figcaption><span>PRATO 06</span><b>Cupim / mandioca / cebola</b></figcaption>
+      </figure>
+      <div class="hero-specs" aria-label="Informacoes de servico">
+        <div><small>ENTREGA</small><strong>35–50 min</strong></div>
+        <div><small>RETIRADA</small><strong>20–30 min</strong></div>
+        <div><small>REGIAO</small><strong>Raio de 7 km</strong></div>
+      </div>
+    </section>
+
+    <section class="menu-section grid-light" id="cardapio" aria-labelledby="menu-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Selecao do dia</p>
+          <h2 id="menu-title">CARDAPIO</h2>
+        </div>
+        <p>Onze preparos. Ingredientes identificados. Nenhuma descricao vaga.</p>
+      </div>
+
+      <div class="menu-controls">
+        <div class="categories" role="group" aria-label="Filtrar por categoria">
+          <button class="category active" type="button" data-category="todos" aria-pressed="true">00 / Todos</button>
+          <button class="category" type="button" data-category="entrada" aria-pressed="false">01 / Entradas</button>
+          <button class="category" type="button" data-category="principal" aria-pressed="false">02 / Principais</button>
+          <button class="category" type="button" data-category="vegetal" aria-pressed="false">03 / Vegetais</button>
+          <button class="category" type="button" data-category="doce" aria-pressed="false">04 / Doces</button>
+          <button class="category" type="button" data-category="bebida" aria-pressed="false">05 / Bebidas</button>
+        </div>
+        <label class="search-field">
+          <span class="sr-only">Buscar no cardapio</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+          <input id="menuSearch" type="search" placeholder="BUSCAR INGREDIENTE" autocomplete="off">
+        </label>
+      </div>
+
+      <div class="filter-row">
+        <span id="resultCount">11 preparos</span>
+        <label><input id="vegetarianOnly" type="checkbox"> Somente vegetarianos</label>
+      </div>
+
+      <div class="menu-grid" id="menuGrid" aria-live="polite"></div>
+      <p class="empty-results" id="emptyResults" hidden>Nenhum preparo corresponde aos filtros. Limpe a busca e tente novamente.</p>
+    </section>
+
+    <section class="process-section" id="processo" aria-labelledby="process-title">
+      <div class="process-intro">
+        <p class="eyebrow on-dark">Metodo / 03 etapas</p>
+        <h2 id="process-title">DA CHAPA<br>PARA A MESA.</h2>
+        <p>A operacao e curta de proposito. Menos deslocamento, melhor controle de temperatura e um prato que chega como saiu da cozinha.</p>
+      </div>
+      <ol class="process-list">
+        <li><span>01</span><div><h3>Pedido confirmado</h3><p>A cozinha recebe seu pedido e informa o tempo real de preparo.</p></div></li>
+        <li><span>02</span><div><h3>Preparo por lote</h3><p>Cada item entra no fogo na sequencia certa. Nada fica esperando na bancada.</p></div></li>
+        <li><span>03</span><div><h3>Saida conferida</h3><p>Temperatura, embalagem e itens passam por uma ultima conferencia.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="info-strip" aria-label="Informacoes adicionais">
+      <div><span>ORIGEM</span><b>Produtores em ate 120 km</b></div>
+      <div><span>EMBALAGEM</span><b>Fibras compostaveis</b></div>
+      <div><span>ALERGENOS</span><b>Informados em cada prato</b></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">TEAGAR <em>COZINHA</em></div>
+    <div><span>ATENDIMENTO</span><a href="tel:+551130303030">+55 11 3030–3030</a><a href="mailto:cozinha@teagar.co">cozinha@teagar.co</a></div>
+    <div><span>FUNCIONAMENTO</span><p>Ter–Dom / 12:00–22:30</p><p>Segunda / cozinha fechada</p></div>
+    <p class="footer-note">Cardapio demonstrativo.<br>Teagar Company © 2026</p>
+  </footer>
+
+  <div class="cart-backdrop" id="cartBackdrop" hidden></div>
+  <aside class="cart" id="cart" aria-labelledby="cartTitle" aria-hidden="true">
+    <header>
+      <div><p class="eyebrow">Pedido atual</p><h2 id="cartTitle">SUA COMANDA</h2></div>
+      <button class="icon-button" id="closeCart" type="button" aria-label="Fechar pedido">×</button>
+    </header>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty">
+      <span>00</span>
+      <h3>A comanda esta vazia.</h3>
+      <p>Adicione um preparo do cardapio para iniciar o pedido.</p>
+    </div>
+    <footer class="cart-total">
+      <div><span>Subtotal</span><strong id="cartTotal">R$ 0,00</strong></div>
+      <small>Taxa de entrega calculada no endereco.</small>
+      <button id="checkoutButton" type="button" disabled>Continuar pedido</button>
+    </footer>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

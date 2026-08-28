@@ -1,0 +1,16 @@
+{
+  "name": "teagar-company-food-menu",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "check": "node --check app.js && node scripts/check.mjs",
+    "build": "node scripts/build.mjs",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
