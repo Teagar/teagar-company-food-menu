@@ -119,6 +119,7 @@ function changeQuantity(id, amount) {
 
 function openCart() {
   elements.backdrop.hidden = false;
+  elements.cart.removeAttribute("inert");
   elements.cart.setAttribute("aria-hidden", "false");
   document.querySelector("#openCart").setAttribute("aria-expanded", "true");
   document.body.classList.add("cart-open");
@@ -130,6 +131,7 @@ function openCart() {
 
 function closeCart() {
   elements.cart.classList.remove("open");
+  elements.cart.setAttribute("inert", "");
   elements.cart.setAttribute("aria-hidden", "true");
   document.querySelector("#openCart").setAttribute("aria-expanded", "false");
   document.body.classList.remove("cart-open");

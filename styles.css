@@ -80,7 +80,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .food-c { top: 29%; left: 57%; width: 10%; aspect-ratio: 1.6; background: var(--signal-deep); transform: rotate(24deg); }
 .hero-visual figcaption { position: absolute; right: -1px; bottom: -1px; min-width: 240px; padding: 16px 24px; background: var(--paper); color: var(--ink); }
 .hero-visual figcaption span, .hero-visual figcaption b { display: block; }
-.hero-visual figcaption span { color: var(--signal-deep); font-family: var(--mono); font-size: 8px; letter-spacing: .1em; }
+.hero-visual figcaption span { color: #a63f00; font-family: var(--mono); font-size: 8px; letter-spacing: .1em; }
 .hero-visual figcaption b { margin-top: 4px; font-family: var(--display); font-size: 21px; text-transform: uppercase; }
 .hero-specs { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.14); }
 .hero-specs div { padding: 16px 0; }
@@ -134,7 +134,8 @@ body > footer { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px
 .footer-brand { font-family: var(--display); font-size: 55px; font-weight: 900; line-height: .85; }
 .footer-brand em { display: block; color: var(--signal); font-style: normal; }
 body > footer a, body > footer p { display: block; margin: 0 0 8px; color: #c7c4be; font-size: 13px; text-decoration: none; }
-.footer-note { align-self: end; color: #77736e !important; font-family: var(--mono); font-size: 8px !important; text-transform: uppercase; }
+body > footer span { color: #aaa7a2; }
+.footer-note { align-self: end; color: #aaa7a2 !important; font-family: var(--mono); font-size: 8px !important; text-transform: uppercase; }
 
 .cart-backdrop { position: fixed; inset: 0; z-index: 70; background: rgba(10,10,9,.62); }
 .cart { position: fixed; top: 0; right: 0; z-index: 80; width: min(480px, 100%); height: 100dvh; display: grid; grid-template-rows: auto 1fr auto; padding: 32px; overflow: auto; background: var(--paper); box-shadow: -16px 0 48px rgba(0,0,0,.24); transform: translateX(105%); transition: transform .25s ease; }
